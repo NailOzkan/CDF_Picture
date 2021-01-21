@@ -1,7 +1,4 @@
-# CDF_Picture
-
-
-CDF nedir?
+# CDF nedir?
 Olasılık kuramı ve istatistik bilim dallarında birikimli dağılım fonksiyonu bir reel değerli rassal değişken olan Xin olasılık dağılımını tümüyle tanımlayan bir fonksiyondur. Olasılık dağılım fonksiyonu veya sadece dağılım fonksiyonu olarak da anılmaktadır. Her bir reel sayı olan x için X'in birikimli dağılım fonksiyonu şöyle ifade edilir:
 x -> FX(x)=P(X<=x),
 Burada sağ taraf xe eşit veya xden daha küçük değerler alan rassal değişken X için olasılık değerlerini temsil eder. Böylece, Xin (a, b] aralığında bulunma olasılığı
@@ -40,13 +37,13 @@ from skimage.color import rgb2gray
 from skimage import img_as_ubyte, img_as_float
 from skimage.exposure import histogram, cumulative_distribution
 
-# resmimizi ekliyoruz ve matrisini gösteriyoruz
+* resmimizi ekliyoruz ve matrisini gösteriyoruz
 img = mpimg.imread('C:fotograf yolu')
 print(img)
 imgplot = plt.imshow(img)
 plt.show()
 
-# resmi gri tona döndürüyoruz
+* resmi gri tona döndürüyoruz
 plt.figure(num=None, figsize=(8, 6), dpi=80)
 dark_image_grey = img_as_ubyte(rgb2gray(img))
 plt.imshow(dark_image_grey)
