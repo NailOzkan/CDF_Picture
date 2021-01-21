@@ -19,7 +19,7 @@ Bu dağılım ailesinin her bir üyesi sadece iki parametreyle tam olarak tanım
 
 Olasılık kuramı içinde birkaç sürekli olasılık dağılımları ve ayrık olasılık dağılımlarının limite giden dağılımları yani rassal değişkenlerin yakınsama analizinde kullanılmaktadır.
 
---Görüntü analizinde CDF--
+# Görüntü analizinde CDF
 
 Eşikleme: Görüntü işlemede en çok kullanılacak tekniklerden biri eşiklemedir (treshold). Gri ton eşiklemesinde bir eşik değer seçilerek, açık ton üzerinde koyu kısımların yada tersi olarak koyu zemin üstünde parlak kısımların aranması hedeflenir. Bunun sonucunda “obje” ve “arka plan” olarak iki kısım belirlenir. Eşik değerin belirlenmesi için görüntünün parlaklık histogramı çıkartılır. Yüksek değere sahip olan kısımlar daha açık renkteki kısımları, yani bu görüntü  için arkaplanı göstermekte, daha düşük değerde olan
 kısımlar ise objeleri göstermektedir. Renkli görüntülerde ise bir piksel temelde üç renk bileşeni içerir (RGB: kırmızı,yeşil, mavi). Bu bileşenlerin her biri bir byte ile anlatıldığında her bir piksel 255*255*255 farklı renk değeri alabilir. Bir pikselin ikili uzaya aktarılması onun renk bileşenlerinin tümünün 255 ya da tümünün 0 olması anlamına gelir. Bunun için de piksel renk bileşeni bir sınırdan büyükse 255 küçükse 0 yapılır. RGB renk uzayı ışığı temel alarak, doğadaki tüm renklerin kodları bu üç temel renge referansla belirtilir. HSV (Hue, Saturation, Value) veya HSB (Hue,Saturation, Brightness) renk uzayında ise renkleri sırasıyla renk özü, doygunluk ve parlaklık olarak tanımlar. Renk özü, rengin baskın dalga uzunluğunu belirler, örneğin sarı, mavi, yeşil, vb. Açısal bir değerdir (0°-360°). Doygunluk ise rengin canlılığını belirler. Yüksek doygunluk canlı renklere neden olurken, düşük olasılık rengin gri tonlarına yaklaşmasına neden olur ve 0-100 arasında değişir. Parlaklık ise rengin aydınlığını yani içindeki beyaz oranını belirler. 0-100 arasında değişir. RGB ve HSV nin bileşenlerinin histogramları üzerinde seçim yapılarak eşikleme gerçekleştirilir.
@@ -49,7 +49,7 @@ dark_image_grey = img_as_ubyte(rgb2gray(img))
 plt.imshow(dark_image_grey)
 plt.show()
 
-# histogramını çıkarma işlemi
+* histogramını çıkarma işlemi
 freq, bins = histogram(dark_image_grey)
 plt.figure(num=None, figsize=(8, 6), dpi=100, facecolor='white')
 freq, bins = histogram(dark_image_grey)
@@ -58,8 +58,7 @@ plt.xlabel('intensity value', fontsize=12)
 plt.ylabel('fraction of pixels', fontsize=12)
 plt.show()
 
-# histogram normal dağılıma sahip değil. Teorik olarak CDF düz bir çizgide olmalıdır amacımız
-# bu resmi normal dağılım yapabilmek.
+* histogram normal dağılıma sahip değil. Teorik olarak CDF düz bir çizgide olmalıdır amacımız  bu resmi normal dağılım yapabilmek.
 
 
 freq, bins = cumulative_distribution(dark_image_grey)
